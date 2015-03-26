@@ -1,0 +1,9 @@
+<h1>{{ post.title }}</h1>
+
+<div>
+	{{ post.text }}
+</div>
+<hr>
+Publish by {{ post.user.name }}
+<hr>
+{{ render_hinclude(controller('AcmeShagtvBundle:Default:commentsBlock', { 'id': post.id })) }}

@@ -1,0 +1,11 @@
+acme_shagtv_index:
+    path:     /
+    defaults: { _controller: AcmeShagtvBundle:Default:index, _format: html}
+
+acme_shagtv_info:
+    path:     /info/{id}
+    defaults: { _controller: AcmeShagtvBundle:Default:info }
+
+acme_shagtv_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AcmeShagtvBundle:Default:hello }

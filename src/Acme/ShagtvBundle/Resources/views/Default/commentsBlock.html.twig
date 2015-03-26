@@ -1,0 +1,6 @@
+<strong>Comments:</strong>
+<ul>
+	{% for comment in comments %}
+		<li>{{ comment.user.name }}: {{ comment.text }}</li>
+	{% endfor %}
+</ul>
