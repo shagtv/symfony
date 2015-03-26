@@ -39,8 +39,4 @@ Acme\ShagtvBundle\Entity\Posts:
                 user_id:
                     referencedColumnName: id
             orphanRemoval: false
-    oneToMany:
-        comments:
-            targetEntity: Comments
-            mappedBy: post
     lifecycleCallbacks: {  }

@@ -31,7 +31,7 @@ class Comments
     /**
      * @var \Acme\ShagtvBundle\Entity\Posts
      *
-     * @ORM\ManyToOne(targetEntity="Acme\ShagtvBundle\Entity\Posts", inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="Acme\ShagtvBundle\Entity\Posts")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="id")
      * })

@@ -30,7 +30,7 @@ Acme\ShagtvBundle\Entity\Comments:
             targetEntity: Posts
             cascade: {  }
             mappedBy: null
-            inversedBy: comments
+            inversedBy: null
             joinColumns:
                 post_id:
                     referencedColumnName: id

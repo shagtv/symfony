@@ -36,13 +36,6 @@ class Posts
     private $text;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="Acme\ShagtvBundle\Entity\Comments", mappedBy="post")
-     */
-    private $comments;
-
-    /**
      * @var \Acme\ShagtvBundle\Entity\Users
      *
      * @ORM\ManyToOne(targetEntity="Acme\ShagtvBundle\Entity\Users")
@@ -52,13 +45,6 @@ class Posts
      */
     private $user;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -115,39 +101,6 @@ class Posts
     public function getText()
     {
         return $this->text;
-    }
-
-    /**
-     * Add comments
-     *
-     * @param \Acme\ShagtvBundle\Entity\Comments $comments
-     * @return Posts
-     */
-    public function addComment(\Acme\ShagtvBundle\Entity\Comments $comments)
-    {
-        $this->comments[] = $comments;
-
-        return $this;
-    }
-
-    /**
-     * Remove comments
-     *
-     * @param \Acme\ShagtvBundle\Entity\Comments $comments
-     */
-    public function removeComment(\Acme\ShagtvBundle\Entity\Comments $comments)
-    {
-        $this->comments->removeElement($comments);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getComments()
-    {
-        return $this->comments;
     }
 
     /**
