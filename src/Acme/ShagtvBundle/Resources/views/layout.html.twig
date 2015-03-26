@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    {% javascripts '@AcmeShagtvBundle/Resources/public/js/hinclude.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

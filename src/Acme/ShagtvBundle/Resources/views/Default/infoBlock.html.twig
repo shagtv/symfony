@@ -1,9 +1,11 @@
-<h1>{{ post.title }}</h1>
+<h1>
+    <a href="{{ asset(url('acme_shagtv_info', {id:post.id})) }}">{{ post.title }}</a>
+</h1>
 
 <div>
 	{{ post.text }}
 </div>
 <hr>
-Publish by {{ post.user.name }}
-<hr>
-{{ render_hinclude(controller('AcmeShagtvBundle:Default:commentsBlock', { 'id': post.id })) }}
+Publish by {{ post.user.name }}<br>
+<a href="{{ asset(url('acme_shagtv_edit', {id:post.id})) }}">Редактировать</a>
+<a href="{{ asset(url('acme_shagtv_remove', {id:post.id})) }}">Удалить</a>

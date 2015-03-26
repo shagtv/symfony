@@ -1,16 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends '@AcmeShagtv/layout.html.twig' %}
 
 {% block body %}
+    <div>
+        <a href="{{ asset(url('acme_shagtv_new')) }}">Новая</a>
+    </div>
 	<h1>Последние публикации</h1>
 	<hr>
 	{% for post in posts %}
 		{{ render(controller('AcmeShagtvBundle:Default:infoBlock', { 'id': post.id })) }}
 		<hr>
 	{% endfor %}
-{% endblock %}
-
-{% block javascripts %}
-	{% javascripts '@AcmeShagtvBundle/Resources/public/js/hinclude.js' %}
-		<script src="{{ asset_url }}"></script>
-	{% endjavascripts %}
 {% endblock %}

@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+    <div>
+        <a href="{{ asset(url('acme_shagtv_index')) }}">Список публикаций</a>
+        <a href="{{ asset(url('acme_shagtv_new')) }}">Новая</a>
+    </div>
 	<h1>{{ post.title }}</h1>
 
 	<div>
 		{{ post.text }}
 	</div>
 	<hr>
-	Publish by {{ post.user.name }}
+	Publish by {{ post.user.name }}<br/>
+    <a href="{{ asset(url('acme_shagtv_edit', {id:post.id})) }}">Редактировать</a>
+    <a href="{{ asset(url('acme_shagtv_remove', {id:post.id})) }}">Удалить</a>
 	<hr>
-	<strong>Comments:</strong>
-	<ul>
-		{% for comment in post.comments %}
-			<li>{{ comment.user.name }}: {{ comment.text }}</li>
-		{% endfor %}
-	</ul>
+    {{ render_hinclude(controller('AcmeShagtvBundle:Default:commentsBlock', { 'id': post.id })) }}
 {% endblock %}

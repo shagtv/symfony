@@ -6,6 +6,18 @@ acme_shagtv_info:
     path:     /info/{id}
     defaults: { _controller: AcmeShagtvBundle:Default:info }
 
+acme_shagtv_edit:
+    path:     /edit/{id}
+    defaults: { _controller: AcmeShagtvBundle:Default:edit }
+
+acme_shagtv_new:
+    path:     /new
+    defaults: { _controller: AcmeShagtvBundle:Default:new }
+
+acme_shagtv_remove:
+    path:     /remove/{id}
+    defaults: { _controller: AcmeShagtvBundle:Default:remove }
+
 acme_shagtv_homepage:
     path:     /hello/{name}
     defaults: { _controller: AcmeShagtvBundle:Default:hello }
