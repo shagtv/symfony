@@ -15,7 +15,7 @@ class DefaultController extends Controller {
 	public function indexAction() {
 		$posts = $this->getDoctrine()
 			->getRepository('AcmeShagtvBundle:Posts')
-			->findBy(array(), array(), 5, 0);
+			->findAll();
 
 		return $this->render('AcmeShagtvBundle:Default:index.html.twig', array('posts' => $posts));
 	}
