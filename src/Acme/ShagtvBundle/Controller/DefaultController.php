@@ -57,6 +57,8 @@ class DefaultController extends Controller {
 			$em->persist($post);
 			$em->flush();
 
+			$this->addFlash("notice", "Saved successfully");
+
 			return $this->redirectToRoute('acme_shagtv_info', array('id' => $post->getId()));
 		}
 

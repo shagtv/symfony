@@ -1,10 +1,12 @@
 {% extends '@AcmeShagtv/layout.html.twig' %}
 
-{% block body %}
+{% block content %}
     <div>
         <a href="{{ asset(url('acme_shagtv_info', {id: post.id})) }}">К публикации</a>
     </div>
     <h1>Новая публикация</h1>
+
+    {% form_theme form 'form_table_layout.html.twig' %}
 
     {{ form_start(form) }}
     {{ form_widget(form) }}

@@ -25,16 +25,20 @@ class Posts {
 	/**
 	 * @var string
 	 *
-	 * @ORM\Column(name="title", type="string", length=255, nullable=true)
+	 * @ORM\Column(name="title", type="string", length=255, unique=true)
 	 */
 	private $title;
 
 	/**
 	 * @var string
 	 *
-	 * @ORM\Column(name="text", type="string", length=5000, nullable=true)
+	 * @ORM\Column(name="text", type="string", length=5000, nullable=false)
 	 */
 	private $text;
+
+	function __toString() {
+		return $this->title;
+	}
 
 	/**
 	 * @var \Acme\ShagtvBundle\Entity\Users

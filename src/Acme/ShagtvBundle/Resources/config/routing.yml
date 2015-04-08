@@ -1,3 +1,15 @@
+acme_shagtv_posts:
+    resource: "@AcmeShagtvBundle/Resources/config/routing/posts.yml"
+    prefix:   /posts
+
+acme_shagtv_comments:
+    resource: "@AcmeShagtvBundle/Resources/config/routing/comments.yml"
+    prefix:   /comments
+
+acme_shagtv_users:
+    resource: "@AcmeShagtvBundle/Resources/config/routing/users.yml"
+    prefix:   /users
+
 acme_shagtv_index:
     path:     /
     defaults: { _controller: AcmeShagtvBundle:Default:index, _format: html}

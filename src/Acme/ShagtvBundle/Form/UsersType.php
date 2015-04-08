@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PostsType extends AbstractType
+class UsersType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,9 +15,7 @@ class PostsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('text')
-            ->add('user')
+            ->add('name')
         ;
     }
     
@@ -27,7 +25,7 @@ class PostsType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Acme\ShagtvBundle\Entity\Posts'
+            'data_class' => 'Acme\ShagtvBundle\Entity\Users'
         ));
     }
 
@@ -36,6 +34,6 @@ class PostsType extends AbstractType
      */
     public function getName()
     {
-        return 'acme_shagtvbundle_posts';
+        return 'acme_shagtvbundle_users';
     }
 }

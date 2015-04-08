@@ -1,0 +1,30 @@
+posts:
+    path:     /
+    defaults: { _controller: "AcmeShagtvBundle:Posts:index" }
+
+posts_show:
+    path:     /{id}/show
+    defaults: { _controller: "AcmeShagtvBundle:Posts:show" }
+
+posts_new:
+    path:     /new
+    defaults: { _controller: "AcmeShagtvBundle:Posts:new" }
+
+posts_create:
+    path:     /create
+    defaults: { _controller: "AcmeShagtvBundle:Posts:create" }
+    methods:  POST
+
+posts_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AcmeShagtvBundle:Posts:edit" }
+
+posts_update:
+    path:     /{id}/update
+    defaults: { _controller: "AcmeShagtvBundle:Posts:update" }
+    methods:  [POST, PUT]
+
+posts_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AcmeShagtvBundle:Posts:delete" }
+    methods:  [POST, DELETE]

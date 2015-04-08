@@ -1,0 +1,30 @@
+comments:
+    path:     /
+    defaults: { _controller: "AcmeShagtvBundle:Comments:index" }
+
+comments_show:
+    path:     /{id}/show
+    defaults: { _controller: "AcmeShagtvBundle:Comments:show" }
+
+comments_new:
+    path:     /new
+    defaults: { _controller: "AcmeShagtvBundle:Comments:new" }
+
+comments_create:
+    path:     /create
+    defaults: { _controller: "AcmeShagtvBundle:Comments:create" }
+    methods:  POST
+
+comments_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AcmeShagtvBundle:Comments:edit" }
+
+comments_update:
+    path:     /{id}/update
+    defaults: { _controller: "AcmeShagtvBundle:Comments:update" }
+    methods:  [POST, PUT]
+
+comments_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AcmeShagtvBundle:Comments:delete" }
+    methods:  [POST, DELETE]
