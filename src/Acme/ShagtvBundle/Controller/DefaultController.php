@@ -4,11 +4,9 @@ namespace Acme\ShagtvBundle\Controller;
 
 use Acme\ShagtvBundle\Entity\Comments;
 use Acme\ShagtvBundle\Entity\Posts;
-use Doctrine\ORM\Tools\Pagination\Paginator;
+use Acme\ShagtvBundle\Form\PostsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -50,17 +48,7 @@ class DefaultController extends Controller {
 			->getRepository('AcmeShagtvBundle:Posts')
 			->find((int)$id);
 
-		$form = $this->createFormBuilder($post)
-			->add('title', 'text', array('label' => 'Заголовок'))
-			->add('text', 'textarea', array('label' => 'Текст'))
-			//->add('user', 'choice', array('label' => 'Пользователь'))
-			->add('user', 'entity', array(
-				'class' => 'Acme\ShagtvBundle\Entity\Users',
-				'property' => 'name'
-			))
-			->add('save', 'submit', array('label' => 'Сохранить'))
-			->getForm();
-
+		$form = $this->createForm(new PostsType(), $post);
 
 		$form->handleRequest($request);
 
@@ -79,18 +67,7 @@ class DefaultController extends Controller {
 		// create a task and give it some dummy data for this example
 		$post = new Posts();
 
-		$form = $this->createFormBuilder($post)
-			->add('title', 'text', array('label' => 'Заголовок'))
-			->add('text', 'textarea', array('label' => 'Текст'))
-			//->add('user', 'choice', array('label' => 'Пользователь'))
-			->add('user', 'entity', array(
-				'class' => 'Acme\ShagtvBundle\Entity\Users',
-				'property' => 'name'
-			))
-			->add('save', 'submit', array('label' => 'Создать'))
-			->getForm();
-
-
+		$form = $this->createForm(new PostsType(), $post);
 		$form->handleRequest($request);
 
 		if ($form->isValid()) {
