@@ -46,3 +46,9 @@ assetic:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+jns_xhprof:
+    location_web:    http://xhprof.localhost
+    enabled:         true
+    request_query_argument: "__xhprof"
+    #skip_builtin_functions: true
