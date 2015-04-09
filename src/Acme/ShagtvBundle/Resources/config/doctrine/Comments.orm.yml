@@ -2,12 +2,12 @@ Acme\ShagtvBundle\Entity\Comments:
     type: entity
     table: comments
     indexes:
-        FK__users:
-            columns:
-                - user_id
         FK_comments_posts:
             columns:
                 - post_id
+        FK_5F9E962AA76ED395:
+            columns:
+                - user_id
     id:
         id:
             type: integer
@@ -24,17 +24,7 @@ Acme\ShagtvBundle\Entity\Comments:
             length: 5000
             fixed: false
             comment: ''
-            default: ''
     manyToOne:
-        post:
-            targetEntity: Posts
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                post_id:
-                    referencedColumnName: id
-            orphanRemoval: false
         user:
             targetEntity: Users
             cascade: {  }
@@ -42,6 +32,15 @@ Acme\ShagtvBundle\Entity\Comments:
             inversedBy: null
             joinColumns:
                 user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        post:
+            targetEntity: Posts
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                post_id:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

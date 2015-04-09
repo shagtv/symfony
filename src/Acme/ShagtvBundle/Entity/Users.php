@@ -61,4 +61,32 @@ class Users {
 	public function getName() {
 		return $this->name;
 	}
+    /**
+     * @var integer
+     */
+    private $tmp;
+
+
+    /**
+     * Set tmp
+     *
+     * @param integer $tmp
+     * @return Users
+     */
+    public function setTmp($tmp)
+    {
+        $this->tmp = $tmp;
+
+        return $this;
+    }
+
+    /**
+     * Get tmp
+     *
+     * @return integer 
+     */
+    public function getTmp()
+    {
+        return $this->tmp;
+    }
 }

@@ -49,10 +49,9 @@ class DefaultController extends Controller {
 			->find((int)$id);
 
 		$form = $this->createForm(new PostsType(), $post);
+		$form->add('submit', 'submit', array('label' => 'Edit'));
 
-		$form->handleRequest($request);
-
-		if ($form->isValid()) {
+		if ($form->handleRequest($request)->isValid()) {
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($post);
 			$em->flush();
@@ -70,9 +69,9 @@ class DefaultController extends Controller {
 		$post = new Posts();
 
 		$form = $this->createForm(new PostsType(), $post);
-		$form->handleRequest($request);
+		$form->add('submit', 'submit', array('label' => 'Create'));
 
-		if ($form->isValid()) {
+		if ($form->handleRequest($request)->isValid()) {
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($post);
 			$em->flush();

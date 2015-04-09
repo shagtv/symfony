@@ -15,7 +15,11 @@ Acme\ShagtvBundle\Entity\Users:
             type: string
             nullable: false
             length: 255
-            fixed: true
+            fixed: false
             comment: ''
-            default: ''
+        tmp:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
     lifecycleCallbacks: {  }

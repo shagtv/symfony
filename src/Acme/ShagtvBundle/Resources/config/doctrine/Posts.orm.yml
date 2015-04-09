@@ -2,7 +2,7 @@ Acme\ShagtvBundle\Entity\Posts:
     type: entity
     table: posts
     indexes:
-        FK_posts_posts:
+        FK_885DBAFAA76ED395:
             columns:
                 - user_id
     id:
@@ -19,16 +19,14 @@ Acme\ShagtvBundle\Entity\Posts:
             type: string
             nullable: true
             length: 255
-            fixed: true
+            fixed: false
             comment: ''
-            default: ''
         text:
             type: string
             nullable: true
             length: 5000
             fixed: false
             comment: ''
-            default: ''
     manyToOne:
         user:
             targetEntity: Users
